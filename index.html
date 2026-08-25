@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Felipe Ramos — Dev & QA Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ═══════════════ PARTICLES CANVAS ═══════════════ -->
+  <canvas id="particles"></canvas>
+
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">&lt;DR/&gt;</a>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <p class="hero__greeting">Hola, soy</p>
+      <h1 class="hero__name">Daniel Felipe<br /><span class="hero__accent">Ramos Salazar</span></h1>
+      <p class="hero__role">
+        <span class="typed" id="typedRole"></span><span class="cursor">|</span>
+      </p>
+      <p class="hero__desc">
+        QA Automation Engineer & Full Stack Developer — construyo herramientas
+        que hacen que el software falle menos y las personas trabajen mejor.
+      </p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary">Ver proyectos</a>
+        <a href="#contact" class="btn btn--ghost">Contactar</a>
+      </div>
+      <div class="hero__social">
+        <a href="https://github.com/Droxus16" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.6.1-.6 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        </a>
+        <a href="https://co.linkedin.com/in/daniel-felipe-ramos-salazar-6aa1941a1" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M20.4 2H3.6A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.6 22h16.8a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.4 2zM8.3 18.7H5.6V10h2.7v8.7zM7 9.1a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zm11.7 9.6h-2.7v-4.2c0-1 0-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2v4.3h-2.7V10h2.6v1.2h.1a2.8 2.8 0 0 1 2.6-1.4c2.7 0 3.2 1.8 3.2 4.1v4.8z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="code-window">
+        <div class="code-window__bar">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+          <span class="code-window__title">dev.py</span>
+        </div>
+        <pre class="code-window__code"><code><span class="kw">class</span> <span class="cls">Developer</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self):
+        self.name = <span class="str">"Daniel Ramos"</span>
+        self.role = <span class="str">"Full Stack & QA"</span>
+        self.location = <span class="str">"Bogotá, CO 🇨🇴"</span>
+        self.skills = [
+            <span class="str">"Python"</span>, <span class="str">"JavaScript"</span>,
+            <span class="str">"PHP"</span>, <span class="str">"Playwright"</span>,
+            <span class="str">"Postman"</span>, <span class="str">"Streamlit"</span>,
+        ]
+
+    <span class="kw">def</span> <span class="fn">build</span>(self, idea):
+        <span class="kw">return</span> self.ship(idea)
+
+    <span class="kw">def</span> <span class="fn">test</span>(self, product):
+        <span class="kw">return</span> self.break_it_then_fix_it(product)
+
+me = Developer()
+me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section__title"><span class="section__num">01.</span> Sobre mí</h2>
+      <div class="about">
+        <div class="about__text">
+          <p>
+            Soy <strong>Tecnólogo en Análisis y Desarrollo de Software (ADSO)</strong> con enfoque
+            en QA Automation y desarrollo full stack. Me gusta construir cosas que funcionen,
+            que se puedan testear y que resuelvan problemas reales.
+          </p>
+          <p>
+            Creé <strong>PyMerchant</strong>, un framework de testing E2E para tiendas e-commerce
+            que soporta múltiples plataformas (Shopify, WooCommerce, MercadoLibre) con dashboard
+            en vivo, reportes Allure y ejecución paralela.
+          </p>
+          <p>
+            Con experiencia en QA Automation Engineer en <strong>flujos funcionales por API</strong>,
+            donde automatizo procesos de testing y mejoro la calidad del software.
+          </p>
+        </div>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num" data-count="3">0</span><span class="stat__plus">+</span>
+            <span class="stat__label">Proyectos<br/>completados</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="70">0</span><span class="stat__plus">+</span>
+            <span class="stat__label">Tests unitarios<br/>en PyMerchant</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="5">0</span><span class="stat__plus">+</span>
+            <span class="stat__label">Plataformas<br/>e-commerce</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section class="section section--dark" id="skills">
+    <div class="container">
+      <h2 class="section__title"><span class="section__num">02.</span> Skills</h2>
+      <div class="skills">
+        <div class="skill-card" data-tilt>
+          <div class="skill-card__icon">🌐</div>
+          <h3>Frontend</h3>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="skill-card" data-tilt>
+          <div class="skill-card__icon">⚙️</div>
+          <h3>Backend</h3>
+          <ul>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>Streamlit</li>
+          </ul>
+        </div>
+        <div class="skill-card" data-tilt>
+          <div class="skill-card__icon">🧪</div>
+          <h3>QA & Testing</h3>
+          <ul>
+            <li>Playwright</li>
+            <li>Pytest</li>
+            <li>Postman</li>
+            <li>Allure Reports</li>
+          </ul>
+        </div>
+        <div class="skill-card" data-tilt>
+          <div class="skill-card__icon">🛠️</div>
+          <h3>Tools</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>Streamlit Dashboard</li>
+            <li>Altair Charts</li>
+            <li>JSON Config</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section__title"><span class="section__num">03.</span> Proyectos</h2>
+      <div class="projects">
+
+        <!-- PyMerchant -->
+        <article class="project-card project-card--featured">
+          <div class="project-card__badge">⭐ Proyecto destacado</div>
+          <div class="project-card__header">
+            <div>
+              <h3 class="project-card__name">PyMerchant</h3>
+              <p class="project-card__subtitle">Framework QA E2E para e-commerce</p>
+            </div>
+          </div>
+          <p class="project-card__desc">
+            Framework de testing automatizado que valida cualquier tienda e-commerce
+            con Playwright + Pytest. Incluye dashboard Streamlit en vivo, reportes Allure,
+            ejecución paralela y soporte multi-plataforma (Shopify, WooCommerce, MercadoLibre).
+          </p>
+          <div class="project-card__tech">
+            <span>Python</span><span>Playwright</span><span>Pytest</span>
+            <span>Streamlit</span><span>Allure</span><span>Altair</span>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/Droxus16/PyMerchant" target="_blank" class="btn btn--sm btn--primary">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.6.1-.6 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              Código
+            </a>
+          </div>
+          <div class="project-card__features">
+            <div class="feature">
+              <span class="feature__icon">🔄</span>
+              <span>Multi-tienda configurable por JSON</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">📊</span>
+              <span>Dashboard Streamlit con métricas en vivo</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">⚡</span>
+              <span>Ejecución paralela con pytest-xdist</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🔐</span>
+              <span>JWT auto-renovado + storage state</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- GastoSimple -->
+        <article class="project-card">
+          <div class="project-card__image">
+            <img src="proyects/img/GASTOSIMPLE/GASTOSIMPLE.png" alt="Gasto Simple - Interfaz de la aplicación" loading="lazy" />
+            <div class="project-card__image-overlay"></div>
+          </div>
+          <div class="project-card__header">
+            <div>
+              <h3 class="project-card__name">Gasto Simple</h3>
+              <p class="project-card__subtitle">Herramienta de finanzas personales</p>
+            </div>
+          </div>
+          <p class="project-card__desc">
+            Aplicación web para registrar ingresos, gastos y optimizar el ahorro.
+            Interfaz intuitiva con dashboard de visualización financiera y diseño responsive.
+          </p>
+          <div class="project-card__tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span>
+          </div>
+        </article>
+
+        <!-- KERA -->
+        <article class="project-card">
+          <div class="project-card__image">
+            <img src="proyects/img/KERA/KERA.png" alt="KERA - Directorio Nacional Digital" loading="lazy" />
+            <div class="project-card__image-overlay"></div>
+          </div>
+          <div class="project-card__header">
+            <div>
+              <h3 class="project-card__name">KERA</h3>
+              <p class="project-card__subtitle">Directorio Nacional Digital</p>
+            </div>
+          </div>
+          <p class="project-card__desc">
+            Plataforma que conecta talento con oportunidades en toda Colombia.
+            Sistema de directorio con búsqueda por categoría, departamento y ciudad.
+          </p>
+          <div class="project-card__tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section class="section section--dark" id="contact">
+    <div class="container">
+      <h2 class="section__title"><span class="section__num">04.</span> Contacto</h2>
+      <div class="contact">
+        <p class="contact__text">
+          ¿Tienes un proyecto en mente o quieres hablar de QA, automatización o desarrollo?
+          ¡Conectemos!
+        </p>
+        <div class="contact__links">
+          <a href="https://github.com/Droxus16" target="_blank" class="contact__card">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.6.1-.6 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <span>GitHub</span>
+            <span class="contact__card__handle">@Droxus16</span>
+          </a>
+          <a href="https://co.linkedin.com/in/daniel-felipe-ramos-salazar-6aa1941a1" target="_blank" class="contact__card">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M20.4 2H3.6A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.6 22h16.8a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.4 2zM8.3 18.7H5.6V10h2.7v8.7zM7 9.1a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zm11.7 9.6h-2.7v-4.2c0-1 0-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2v4.3h-2.7V10h2.6v1.2h.1a2.8 2.8 0 0 1 2.6-1.4c2.7 0 3.2 1.8 3.2 4.1v4.8z"/></svg>
+            <span>LinkedIn</span>
+            <span class="contact__card__handle">Daniel Ramos</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <p>© 2026 Daniel Felipe Ramos Salazar — Hecho con ☕ y código</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
