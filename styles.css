@@ -92,6 +92,18 @@ img { max-width: 100%; display: block; }
 }
 .nav__links a:hover { color: var(--cyan); }
 .nav__links a:hover::after { width: 100%; }
+.nav__cv-link {
+  color: var(--cyan) !important;
+  border: 1px solid var(--cyan);
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.8rem !important;
+  transition: all 0.3s;
+}
+.nav__cv-link:hover {
+  background: var(--cyan-dim);
+}
+.nav__cv-link::after { display: none !important; }
 .nav__toggle {
   display: none;
   flex-direction: column;

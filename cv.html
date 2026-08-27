@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Daniel Felipe Ramos Salazar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════ ATS CV STYLES ═══════════════ */
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a2e;
+      --text-secondary: #4a4a6a;
+      --accent: #0a2540;
+      --accent-light: #00d2ff;
+      --border: #e0e0e0;
+      --section-bg: #f8f9fc;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .cv {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 50px;
+      background: var(--bg);
+    }
+
+    /* ═══ HEADER ═══ */
+    .cv__header {
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 3px solid var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .cv__name {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .cv__title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .cv__contact {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .cv__contact span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cv__contact a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .cv__contact a:hover {
+      color: var(--accent);
+    }
+
+    /* ═══ SECTIONS ═══ */
+    .cv__section {
+      margin-bottom: 24px;
+    }
+
+    .cv__section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+
+    /* ═══ PROFILE ═══ */
+    .cv__profile {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ═══ EDUCATION ═══ */
+    .cv__edu {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px 0;
+    }
+
+    .cv__edu-info h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cv__edu-info p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .cv__edu-date {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    /* ═══ EXPERIENCE ═══ */
+    .cv__exp {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv__exp:last-child {
+      border-bottom: none;
+    }
+
+    .cv__exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .cv__exp-header h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cv__exp-header .company {
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .cv__exp-date {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .cv__exp-location {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .cv__exp-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cv__exp-list li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .cv__exp-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-weight: 700;
+    }
+
+    /* ═══ SKILLS ═══ */
+    .cv__skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 30px;
+    }
+
+    .cv__skill-group h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .cv__skill-group p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ═══ PROJECTS ═══ */
+    .cv__project {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv__project:last-child {
+      border-bottom: none;
+    }
+
+    .cv__project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .cv__project-header h3 {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cv__project-link {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .cv__project-link:hover {
+      text-decoration: underline;
+    }
+
+    .cv__project-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .cv__project-tech {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .cv__project-tech span {
+      display: inline-block;
+      background: var(--section-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* ═══ CERTIFICATIONS ═══ */
+    .cv__na {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* ═══ ACTION BAR ═══ */
+    .action-bar {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 50px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .action-bar a,
+    .action-bar button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-back {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .btn-back:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-print {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-print:hover {
+      background: #0d3060;
+      box-shadow: 0 4px 16px rgba(10, 37, 64, 0.3);
+    }
+
+    .btn-pdf {
+      background: linear-gradient(135deg, #00d2ff, #7b5cff);
+      color: #fff;
+    }
+
+    .btn-pdf:hover {
+      box-shadow: 0 4px 16px rgba(0, 210, 255, 0.3);
+    }
+
+    /* ═══ PRINT STYLES ═══ */
+    @media print {
+      body { background: #fff; }
+      .action-bar { display: none !important; }
+      .cv { padding: 20px 30px; max-width: 100%; }
+      .cv__section { break-inside: avoid; }
+      .cv__exp { break-inside: avoid; }
+      .cv__project { break-inside: avoid; }
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 640px) {
+      .cv { padding: 24px 20px; }
+      .cv__name { font-size: 22px; }
+      .cv__contact { flex-direction: column; align-items: center; }
+      .cv__skills-grid { grid-template-columns: 1fr; }
+      .cv__exp-header { flex-direction: column; }
+      .cv__edu { flex-direction: column; gap: 4px; }
+      .action-bar { padding: 0 20px; flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ ACTION BAR ═══ -->
+  <div class="action-bar">
+    <a href="index.html" class="btn-back">← Volver al Portafolio</a>
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+  </div>
+
+  <!-- ═══ CV ═══ -->
+  <div class="cv">
+
+    <!-- HEADER -->
+    <header class="cv__header">
+      <h1 class="cv__name">Daniel Felipe Ramos Salazar</h1>
+      <p class="cv__title">Tecnólogo en Análisis y Desarrollo de Software — Full Stack Developer & QA Engineer</p>
+      <div class="cv__contact">
+        <span>CC 1000324580</span>
+        <span>Bogotá, Colombia</span>
+        <span><a href="mailto:dazusxd@gmail.com">dazusxd@gmail.com</a></span>
+        <span><a href="https://github.com/Droxus16" target="_blank">github.com/Droxus16</a></span>
+        <span><a href="https://co.linkedin.com/in/daniel-felipe-ramos-salazar-6aa1941a1" target="_blank">LinkedIn</a></span>
+      </div>
+    </header>
+
+    <!-- PERFIL PROFESIONAL -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Perfil Profesional</h2>
+      <p class="cv__profile">
+        Tecnólogo en Análisis y Desarrollo de Software formado por el SENA, con enfoque en
+        desarrollo full stack, control de bases de datos y aseguramiento de calidad (QA).
+        Experiencia en automatización de pruebas, desarrollo de APIs REST, manejo de
+        bases de datos SQL y NoSQL, y creación de frameworks de testing. Apasionado por
+        construir software confiable, escalable y bien testeado.
+      </p>
+    </section>
+
+    <!-- EDUCACIÓN -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Educación</h2>
+      <div class="cv__edu">
+        <div class="cv__edu-info">
+          <h3>Tecnólogo en Análisis y Desarrollo de Software</h3>
+          <p>SENA — Servicio Nacional de Aprendizaje</p>
+        </div>
+        <span class="cv__edu-date">2024 — 2026</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA LABORAL -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Experiencia Laboral</h2>
+
+      <div class="cv__exp">
+        <div class="cv__exp-header">
+          <div>
+            <h3>QA Automation Engineer</h3>
+            <p class="company">Netáctica</p>
+          </div>
+          <span class="cv__exp-date">Feb 2026 — Abr 2026</span>
+        </div>
+        <p class="cv__exp-location">Bogotá, Colombia</p>
+        <ul class="cv__exp-list">
+          <li>Automatización de pruebas funcionales por API utilizando Postman y scripts personalizados</li>
+          <li>Validación de flujos funcionales end-to-end en aplicaciones web</li>
+          <li>Diseño y ejecución de casos de prueba para asegurar la calidad del software</li>
+          <li>Documentación de defectos y seguimiento en herramientas de gestión de calidad</li>
+          <li>Colaboración con equipos de desarrollo para identificar y resolver bugs críticos</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HABILIDADES TÉCNICAS -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Habilidades Técnicas</h2>
+      <div class="cv__skills-grid">
+        <div class="cv__skill-group">
+          <h4>Lenguajes de Programación</h4>
+          <p>Python, PHP, JavaScript, HTML5, CSS3</p>
+        </div>
+        <div class="cv__skill-group">
+          <h4>Bases de Datos</h4>
+          <p>SQL (MySQL, PostgreSQL), NoSQL (MongoDB)</p>
+        </div>
+        <div class="cv__skill-group">
+          <h4>QA & Testing</h4>
+          <p>Postman, Playwright, Pytest, Allure Reports, Pruebas API REST</p>
+        </div>
+        <div class="cv__skill-group">
+          <h4>Frameworks & Herramientas</h4>
+          <p>Streamlit, Flask, Git, GitHub, APIs REST</p>
+        </div>
+        <div class="cv__skill-group">
+          <h4>Metodologías</h4>
+          <p>Scrum, Pruebas Automatizadas, QA Manual, Control de Calidad</p>
+        </div>
+        <div class="cv__skill-group">
+          <h4>Otros</h4>
+          <p>Análisis de datos, Documentación técnica, Resolución de problemas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Proyectos Destacados</h2>
+
+      <div class="cv__project">
+        <div class="cv__project-header">
+          <h3>PyMerchant — Framework QA E2E para E-commerce</h3>
+          <a href="https://github.com/Droxus16/PyMerchant" class="cv__project-link" target="_blank">github.com/Droxus16/PyMerchant</a>
+        </div>
+        <p class="cv__project-desc">
+          Framework de testing automatizado que valida tiendas e-commerce con Playwright + Pytest.
+          Incluye dashboard Streamlit en vivo, reportes Allure, ejecución paralela y soporte
+          multi-plataforma (Shopify, WooCommerce, MercadoLibre). Más de 70 tests unitarios.
+        </p>
+        <div class="cv__project-tech">
+          <span>Python</span>
+          <span>Playwright</span>
+          <span>Pytest</span>
+          <span>Streamlit</span>
+          <span>Allure</span>
+          <span>Altair</span>
+        </div>
+      </div>
+
+      <div class="cv__project">
+        <div class="cv__project-header">
+          <h3>Gasto Simple — Herramienta de Finanzas Personales</h3>
+        </div>
+        <p class="cv__project-desc">
+          Aplicación web para registrar ingresos, gastos y optimizar el ahorro.
+          Interfaz intuitiva con dashboard de visualización financiera y diseño responsive.
+        </p>
+        <div class="cv__project-tech">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>PHP</span>
+        </div>
+      </div>
+
+      <div class="cv__project">
+        <div class="cv__project-header">
+          <h3>KERA — Directorio Nacional Digital</h3>
+        </div>
+        <p class="cv__project-desc">
+          Plataforma que conecta talento con oportunidades en toda Colombia.
+          Sistema de directorio con búsqueda por categoría, departamento y ciudad.
+        </p>
+        <div class="cv__project-tech">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>PHP</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICACIONES -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Certificaciones</h2>
+      <p class="cv__na">Próximamente — En proceso de certificación</p>
+    </section>
+
+  </div>
+
+</body>
+</html>
