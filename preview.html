@@ -102,6 +102,68 @@
     }
     .nav__links a:hover { color: var(--cyan); }
     .nav__links a:hover::after { width: 100%; }
+    .nav__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .lang-toggle {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      cursor: pointer;
+      transition: border-color 0.3s;
+      overflow: hidden;
+    }
+    .lang-toggle:hover {
+      border-color: var(--border-hover);
+    }
+    .lang-toggle__indicator {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: calc(50% - 4px);
+      height: calc(100% - 8px);
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      border-radius: 99px;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
+      box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+    }
+    .lang-toggle__indicator--en {
+      transform: translateX(100%);
+    }
+    .lang-toggle__option {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      transition: color 0.35s;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .lang-toggle__option--active {
+      color: var(--bg);
+    }
+    .lang-toggle__flag {
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+    .lang-toggle__label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    }
     .nav__toggle {
       display: none;
       flex-direction: column;
@@ -589,6 +651,7 @@
         border-bottom: 1px solid var(--border);
         gap: 1rem;
       }
+      .nav__actions { gap: 0.8rem; }
       .nav__toggle { display: flex; }
       .hero__name { font-size: 2rem; }
       .about__stats { flex-direction: column; }
@@ -606,31 +669,44 @@
   <nav class="nav" id="nav">
     <a href="#hero" class="nav__logo">&lt;DR/&gt;</a>
     <ul class="nav__links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <button class="nav__toggle" id="navToggle" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav__actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <div class="lang-toggle__indicator" id="langIndicator"></div>
+        <span class="lang-toggle__option lang-toggle__option--active" data-lang="es">
+          <span class="lang-toggle__flag">🇪🇸</span>
+          <span class="lang-toggle__label">ES</span>
+        </span>
+        <span class="lang-toggle__option" data-lang="en">
+          <span class="lang-toggle__flag">🇬🇧</span>
+          <span class="lang-toggle__label">EN</span>
+        </span>
+      </button>
+      <button class="nav__toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero" id="hero">
     <div class="hero__content">
-      <p class="hero__greeting">Hola, soy</p>
+      <p class="hero__greeting" data-i18n="hero.greeting">Hola, soy</p>
       <h1 class="hero__name">Daniel Felipe<br /><span class="hero__accent">Ramos Salazar</span></h1>
       <p class="hero__role">
         <span class="typed" id="typedRole"></span><span class="cursor">|</span>
       </p>
-      <p class="hero__desc">
+      <p class="hero__desc" data-i18n="hero.desc">
         QA Automation Engineer &amp; Full Stack Developer — construyo herramientas
         que hacen que el software falle menos y las personas trabajen mejor.
       </p>
       <div class="hero__cta">
-        <a href="#projects" class="btn btn--primary">Ver proyectos</a>
-        <a href="#contact" class="btn btn--ghost">Contactar</a>
+        <a href="#projects" class="btn btn--primary" data-i18n="hero.cta1">Ver proyectos</a>
+        <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta2">Contactar</a>
       </div>
       <div class="hero__social">
         <a href="https://github.com/Droxus16" target="_blank" rel="noopener" aria-label="GitHub">
@@ -675,20 +751,20 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
   <!-- ═══════════════ ABOUT ═══════════════ -->
   <section class="section" id="about">
     <div class="container">
-      <h2 class="section__title"><span class="section__num">01.</span> Sobre mí</h2>
+      <h2 class="section__title"><span class="section__num">01.</span> <span data-i18n="about.title">Sobre mí</span></h2>
       <div class="about">
         <div class="about__text">
-          <p>
+          <p data-i18n="about.p1">
             Soy <strong>Tecnólogo en Análisis y Desarrollo de Software (ADSO)</strong> con enfoque
             en QA Automation y desarrollo full stack. Me gusta construir cosas que funcionen,
             que se puedan testear y que resuelvan problemas reales.
           </p>
-          <p>
+          <p data-i18n="about.p2">
             Creé <strong>PyMerchant</strong>, un framework de testing E2E para tiendas e-commerce
             que soporta múltiples plataformas (Shopify, WooCommerce, MercadoLibre) con dashboard
             en vivo, reportes Allure y ejecución paralela.
           </p>
-          <p>
+          <p data-i18n="about.p3">
             Actualmente trabajo como QA Automation Engineer en <strong>Netactica</strong>,
             donde automatizo procesos de testing y mejoro la calidad del software.
           </p>
@@ -696,15 +772,15 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
         <div class="about__stats">
           <div class="stat">
             <span class="stat__num" data-count="3">0</span><span class="stat__plus">+</span>
-            <span class="stat__label">Proyectos<br/>completados</span>
+            <span class="stat__label" data-i18n="about.stat1">Proyectos<br/>completados</span>
           </div>
           <div class="stat">
             <span class="stat__num" data-count="70">0</span><span class="stat__plus">+</span>
-            <span class="stat__label">Tests unitarios<br/>en PyMerchant</span>
+            <span class="stat__label" data-i18n="about.stat2">Tests unitarios<br/>en PyMerchant</span>
           </div>
           <div class="stat">
             <span class="stat__num" data-count="5">0</span><span class="stat__plus">+</span>
-            <span class="stat__label">Plataformas<br/>e-commerce</span>
+            <span class="stat__label" data-i18n="about.stat3">Plataformas<br/>e-commerce</span>
           </div>
         </div>
       </div>
@@ -761,19 +837,19 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
   <!-- ═══════════════ PROJECTS ═══════════════ -->
   <section class="section" id="projects">
     <div class="container">
-      <h2 class="section__title"><span class="section__num">03.</span> Proyectos</h2>
+      <h2 class="section__title"><span class="section__num">03.</span> <span data-i18n="projects.title">Proyectos</span></h2>
       <div class="projects">
 
         <!-- PyMerchant -->
         <article class="project-card project-card--featured">
-          <div class="project-card__badge">⭐ Proyecto destacado</div>
+          <div class="project-card__badge" data-i18n="projects.featured">Proyecto destacado</div>
           <div class="project-card__header">
             <div>
               <h3 class="project-card__name">PyMerchant</h3>
-              <p class="project-card__subtitle">Framework QA E2E para e-commerce</p>
+              <p class="project-card__subtitle" data-i18n="projects.pymerchant.sub">Framework QA E2E para e-commerce</p>
             </div>
           </div>
-          <p class="project-card__desc">
+          <p class="project-card__desc" data-i18n="projects.pymerchant.desc">
             Framework de testing automatizado que valida cualquier tienda e-commerce
             con Playwright + Pytest. Incluye dashboard Streamlit en vivo, reportes Allure,
             ejecución paralela y soporte multi-plataforma (Shopify, WooCommerce, MercadoLibre).
@@ -785,25 +861,25 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
           <div class="project-card__links">
             <a href="https://github.com/Droxus16/PyMerchant" target="_blank" class="btn btn--sm btn--primary">
               <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.6.1-.6 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-              Código
+              <span data-i18n="projects.pymerchant.code">Código</span>
             </a>
           </div>
           <div class="project-card__features">
             <div class="feature">
               <span class="feature__icon">🔄</span>
-              <span>Multi-tienda configurable por JSON</span>
+              <span data-i18n="projects.pymerchant.f1">Multi-tienda configurable por JSON</span>
             </div>
             <div class="feature">
               <span class="feature__icon">📊</span>
-              <span>Dashboard Streamlit con métricas en vivo</span>
+              <span data-i18n="projects.pymerchant.f2">Dashboard Streamlit con métricas en vivo</span>
             </div>
             <div class="feature">
               <span class="feature__icon">⚡</span>
-              <span>Ejecución paralela con pytest-xdist</span>
+              <span data-i18n="projects.pymerchant.f3">Ejecución paralela con pytest-xdist</span>
             </div>
             <div class="feature">
               <span class="feature__icon">🔐</span>
-              <span>JWT auto-renovado + storage state</span>
+              <span data-i18n="projects.pymerchant.f4">JWT auto-renovado + storage state</span>
             </div>
           </div>
         </article>
@@ -817,10 +893,10 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
           <div class="project-card__header">
             <div>
               <h3 class="project-card__name">Gasto Simple</h3>
-              <p class="project-card__subtitle">Herramienta de finanzas personales</p>
+              <p class="project-card__subtitle" data-i18n="projects.gasto.sub">Herramienta de finanzas personales</p>
             </div>
           </div>
-          <p class="project-card__desc">
+          <p class="project-card__desc" data-i18n="projects.gasto.desc">
             Aplicación web para registrar ingresos, gastos y optimizar el ahorro.
             Interfaz intuitiva con dashboard de visualización financiera y diseño responsive.
           </p>
@@ -838,10 +914,10 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
           <div class="project-card__header">
             <div>
               <h3 class="project-card__name">KERA</h3>
-              <p class="project-card__subtitle">Directorio Nacional Digital</p>
+              <p class="project-card__subtitle" data-i18n="projects.kera.sub">Directorio Nacional Digital</p>
             </div>
           </div>
-          <p class="project-card__desc">
+          <p class="project-card__desc" data-i18n="projects.kera.desc">
             Plataforma que conecta talento con oportunidades en toda Colombia.
             Sistema de directorio con búsqueda por categoría, departamento y ciudad.
           </p>
@@ -857,9 +933,9 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
   <!-- ═══════════════ CONTACT ═══════════════ -->
   <section class="section section--dark" id="contact">
     <div class="container">
-      <h2 class="section__title"><span class="section__num">04.</span> Contacto</h2>
+      <h2 class="section__title"><span class="section__num">04.</span> <span data-i18n="contact.title">Contacto</span></h2>
       <div class="contact">
-        <p class="contact__text">
+        <p class="contact__text" data-i18n="contact.desc">
           ¿Tienes un proyecto en mente o quieres hablar de QA, automatización o desarrollo?
           ¡Conectemos!
         </p>
@@ -881,7 +957,7 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
 
   <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
-    <p>© 2026 Daniel Felipe Ramos Salazar — Hecho con ☕ y código</p>
+    <p data-i18n="footer">© 2026 Daniel Felipe Ramos Salazar — Hecho con ☕ y código</p>
   </footer>
 
   <script>
@@ -950,21 +1026,120 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
       animate();
     })();
 
+    /* ═══════════════ TRANSLATIONS ═══════════════ */
+    var translations = {
+      es: {
+        'nav.about': 'Sobre mí',
+        'nav.skills': 'Skills',
+        'nav.projects': 'Proyectos',
+        'nav.contact': 'Contacto',
+        'hero.greeting': 'Hola, soy',
+        'hero.desc': 'QA Automation Engineer & Full Stack Developer — construyo herramientas que hacen que el software falle menos y las personas trabajen mejor.',
+        'hero.cta1': 'Ver proyectos',
+        'hero.cta2': 'Contactar',
+        'about.title': 'Sobre mí',
+        'about.p1': 'Soy <strong>Tecnólogo en Análisis y Desarrollo de Software (ADSO)</strong> con enfoque en QA Automation y desarrollo full stack. Me gusta construir cosas que funcionen, que se puedan testear y que resuelvan problemas reales.',
+        'about.p2': 'Creé <strong>PyMerchant</strong>, un framework de testing E2E para tiendas e-commerce que soporta múltiples plataformas (Shopify, WooCommerce, MercadoLibre) con dashboard en vivo, reportes Allure y ejecución paralela.',
+        'about.p3': 'Actualmente trabajo como QA Automation Engineer en <strong>Netactica</strong>, donde automatizo procesos de testing y mejoro la calidad del software.',
+        'about.stat1': 'Proyectos<br/>completados',
+        'about.stat2': 'Tests unitarios<br/>en PyMerchant',
+        'about.stat3': 'Plataformas<br/>e-commerce',
+        'projects.title': 'Proyectos',
+        'projects.featured': 'Proyecto destacado',
+        'projects.pymerchant.sub': 'Framework QA E2E para e-commerce',
+        'projects.pymerchant.desc': 'Framework de testing automatizado que valida cualquier tienda e-commerce con Playwright + Pytest. Incluye dashboard Streamlit en vivo, reportes Allure, ejecución paralela y soporte multi-plataforma (Shopify, WooCommerce, MercadoLibre).',
+        'projects.pymerchant.code': 'Código',
+        'projects.pymerchant.f1': 'Multi-tienda configurable por JSON',
+        'projects.pymerchant.f2': 'Dashboard Streamlit con métricas en vivo',
+        'projects.pymerchant.f3': 'Ejecución paralela con pytest-xdist',
+        'projects.pymerchant.f4': 'JWT auto-renovado + storage state',
+        'projects.gasto.sub': 'Herramienta de finanzas personales',
+        'projects.gasto.desc': 'Aplicación web para registrar ingresos, gastos y optimizar el ahorro. Interfaz intuitiva con dashboard de visualización financiera y diseño responsive.',
+        'projects.kera.sub': 'Directorio Nacional Digital',
+        'projects.kera.desc': 'Plataforma que conecta talento con oportunidades en toda Colombia. Sistema de directorio con búsqueda por categoría, departamento y ciudad.',
+        'contact.title': 'Contacto',
+        'contact.desc': '¿Tienes un proyecto en mente o quieres hablar de QA, automatización o desarrollo? ¡Conectemos!',
+        'footer': '© 2026 Daniel Felipe Ramos Salazar — Hecho con ☕ y código',
+        'typed.roles': ['QA Automation Engineer', 'Full Stack Developer', 'Python Enthusiast', 'Framework Creator', 'Bug Hunter 🐛'],
+      },
+      en: {
+        'nav.about': 'About',
+        'nav.skills': 'Skills',
+        'nav.projects': 'Projects',
+        'nav.contact': 'Contact',
+        'hero.greeting': "Hi, I'm",
+        'hero.desc': 'QA Automation Engineer & Full Stack Developer — I build tools that make software fail less and people work better.',
+        'hero.cta1': 'View projects',
+        'hero.cta2': 'Contact me',
+        'about.title': 'About me',
+        'about.p1': "I'm a <strong>Software Analysis & Development Technologist (ADSO)</strong> focused on QA Automation and full stack development. I like building things that work, that can be tested, and that solve real problems.",
+        'about.p2': 'I created <strong>PyMerchant</strong>, an E2E testing framework for e-commerce stores that supports multiple platforms (Shopify, WooCommerce, MercadoLibre) with live dashboard, Allure reports, and parallel execution.',
+        'about.p3': 'Currently working as a QA Automation Engineer at <strong>Netactica</strong>, where I automate testing processes and improve software quality.',
+        'about.stat1': 'Completed<br/>projects',
+        'about.stat2': 'Unit tests<br/>in PyMerchant',
+        'about.stat3': 'E-commerce<br/>platforms',
+        'projects.title': 'Projects',
+        'projects.featured': 'Featured project',
+        'projects.pymerchant.sub': 'E2E QA Framework for e-commerce',
+        'projects.pymerchant.desc': 'Automated testing framework that validates any e-commerce store with Playwright + Pytest. Includes live Streamlit dashboard, Allure reports, parallel execution, and multi-platform support (Shopify, WooCommerce, MercadoLibre).',
+        'projects.pymerchant.code': 'Code',
+        'projects.pymerchant.f1': 'Multi-store configurable via JSON',
+        'projects.pymerchant.f2': 'Streamlit dashboard with live metrics',
+        'projects.pymerchant.f3': 'Parallel execution with pytest-xdist',
+        'projects.pymerchant.f4': 'Auto-renewed JWT + storage state',
+        'projects.gasto.sub': 'Personal finance tool',
+        'projects.gasto.desc': 'Web application to track income, expenses and optimize savings. Intuitive interface with financial visualization dashboard and responsive design.',
+        'projects.kera.sub': 'National Digital Directory',
+        'projects.kera.desc': 'Platform that connects talent with opportunities across Colombia. Directory system with search by category, department, and city.',
+        'contact.title': 'Contact',
+        'contact.desc': "Have a project in mind or want to talk about QA, automation, or development? Let's connect!",
+        'footer': '© 2026 Daniel Felipe Ramos Salazar — Made with ☕ and code',
+        'typed.roles': ['QA Automation Engineer', 'Full Stack Developer', 'Python Enthusiast', 'Framework Creator', 'Bug Hunter 🐛'],
+      }
+    };
+
+    var currentLang = localStorage.getItem('lang') || 'es';
+    var currentRoles = translations[currentLang]['typed.roles'];
+    var ri = 0, ci = 0, deleting = false, pause = 0;
+
+    function applyLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      var t = translations[lang];
+      var indicator = document.getElementById('langIndicator');
+      var options = document.querySelectorAll('.lang-toggle__option');
+      if (indicator) {
+        indicator.classList.toggle('lang-toggle__indicator--en', lang === 'en');
+      }
+      options.forEach(function(opt) {
+        var isActive = opt.getAttribute('data-lang') === lang;
+        opt.classList.toggle('lang-toggle__option--active', isActive);
+      });
+      currentRoles = t['typed.roles'];
+      ri = 0; ci = 0; deleting = false;
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+    }
+
+    function initLangToggle() {
+      var btn = document.getElementById('langToggle');
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        applyLang(currentLang === 'es' ? 'en' : 'es');
+      });
+      applyLang(currentLang);
+    }
+    initLangToggle();
+
     /* ═══════════════ TYPED ROLE ═══════════════ */
     (function initTyped() {
-      const el = document.getElementById('typedRole');
+      var el = document.getElementById('typedRole');
       if (!el) return;
-      const roles = [
-        'QA Automation Engineer',
-        'Full Stack Developer',
-        'Python Enthusiast',
-        'Framework Creator',
-        'Bug Hunter 🐛',
-      ];
-      let ri = 0, ci = 0, deleting = false, pause = 0;
-
       function tick() {
-        const role = roles[ri];
+        var role = currentRoles[ri];
         if (!deleting) {
           el.textContent = role.slice(0, ++ci);
           if (ci === role.length) { deleting = true; pause = 60; }
@@ -972,7 +1147,7 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
           pause--;
         } else {
           el.textContent = role.slice(0, --ci);
-          if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+          if (ci === 0) { deleting = false; ri = (ri + 1) % currentRoles.length; }
         }
         setTimeout(tick, deleting ? 35 : 70);
       }
