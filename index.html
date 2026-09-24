@@ -105,32 +105,28 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
       <div class="about">
         <div class="about__text">
           <p data-i18n="about.p1">
-            Soy <strong>Tecnólogo en Análisis y Desarrollo de Software (ADSO)</strong> con enfoque
-            en QA Automation y desarrollo full stack. Me gusta construir cosas que funcionen,
-            que se puedan testear y que resuelvan problemas reales.
+            <strong>Tecnólogo en Análisis y Desarrollo de Software (ADSO)</strong> con experiencia
+            en desarrollo web full stack y QA aplicada. Construyo aplicaciones completas con
+            PHP, Laravel, Python y JavaScript, y garantizo su calidad con testing automatizado.
           </p>
           <p data-i18n="about.p2">
-            Creé <strong>PyMerchant</strong>, un framework de testing E2E para tiendas e-commerce
-            que soporta múltiples plataformas (Shopify, WooCommerce, MercadoLibre) con dashboard
-            en vivo, reportes Allure y ejecución paralela.
+            Mi enfoque combina <strong>desarrollo full stack</strong> — APIs REST, bases de datos,
+            dashboards interactivos — con <strong>QA profesional</strong>: automatización de pruebas
+            E2E, validación de APIs y aseguramiento de calidad en cada etapa del ciclo.
           </p>
           <p data-i18n="about.p3">
-            Con experiencia en QA Automation Engineer en <strong>flujos funcionales por API</strong>,
-            donde automatizo procesos de testing y mejoro la calidad del software.
+            He desarrollado y desplegado aplicaciones en producción como directorios empresariales,
+            plataformas de aprendizaje con IA y herramientas de finanzas personales, aplicando
+            las mejores prácticas de arquitectura, seguridad y experiencia de usuario.
           </p>
-        </div>
-        <div class="about__stats">
+        </div>          <div class="about__stats">
           <div class="stat">
-            <span class="stat__num" data-count="3">0</span><span class="stat__plus">+</span>
+            <span class="stat__num" data-count="4">0</span><span class="stat__plus">+</span>
             <span class="stat__label" data-i18n="about.stat1">Proyectos<br/>completados</span>
           </div>
           <div class="stat">
-            <span class="stat__num" data-count="70">0</span><span class="stat__plus">+</span>
-            <span class="stat__label" data-i18n="about.stat2">Tests unitarios<br/>en PyMerchant</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="5">0</span><span class="stat__plus">+</span>
-            <span class="stat__label" data-i18n="about.stat3">Plataformas<br/>e-commerce</span>
+            <span class="stat__num" data-count="2">0</span><span class="stat__plus">+</span>
+            <span class="stat__label" data-i18n="about.stat3">Plataformas<br/>en producción</span>
           </div>
         </div>
       </div>
@@ -149,6 +145,7 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
             <li>HTML5</li>
             <li>CSS3</li>
             <li>JavaScript</li>
+            <li>Bootstrap</li>
           </ul>
         </div>
         <div class="skill-card" data-tilt>
@@ -158,6 +155,7 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
             <li>Python</li>
             <li>PHP</li>
             <li>Streamlit</li>
+            <li>REST APIs</li>
           </ul>
         </div>
         <div class="skill-card" data-tilt>
@@ -168,6 +166,16 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
             <li>Pytest</li>
             <li>Postman</li>
             <li>Allure Reports</li>
+            <li>API Testing</li>
+          </ul>
+        </div>
+        <div class="skill-card" data-tilt>
+          <div class="skill-card__icon">🗄️</div>
+          <h3>Databases</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>SQL</li>
+            <li>NoSQL</li>
           </ul>
         </div>
         <div class="skill-card" data-tilt>
@@ -175,7 +183,7 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
           <h3>Tools</h3>
           <ul>
             <li>Git & GitHub</li>
-            <li>Streamlit Dashboard</li>
+            <li>VS Code</li>
             <li>Altair Charts</li>
             <li>JSON Config</li>
           </ul>
@@ -198,15 +206,18 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
               <h3 class="project-card__name">PyMerchant</h3>
               <p class="project-card__subtitle" data-i18n="projects.pymerchant.sub">Framework QA E2E para e-commerce</p>
             </div>
+            <span class="project-card__version">v3.0</span>
           </div>
           <p class="project-card__desc" data-i18n="projects.pymerchant.desc">
-            Framework de testing automatizado que valida cualquier tienda e-commerce
-            con Playwright + Pytest. Incluye dashboard Streamlit en vivo, reportes Allure,
-            ejecución paralela y soporte multi-plataforma (Shopify, WooCommerce, MercadoLibre).
+            Framework de testing E2E diseñado para validar cualquier tienda e-commerce.
+            Con un solo cambio de variables de entorno o configuración JSON, el mismo framework
+            puede testear Shopify, WooCommerce, MercadoLibre o cualquier otra plataforma.
+            Incluye dashboard Streamlit en vivo, reportes Allure y ejecución paralela.
           </p>
           <div class="project-card__tech">
-            <span>Python</span><span>Playwright</span><span>Pytest</span>
+            <span>Python 3.12+</span><span>Playwright</span><span>Pytest</span>
             <span>Streamlit</span><span>Allure</span><span>Altair</span>
+            <span>pytest-xdist</span><span>JSON Config</span>
           </div>
           <div class="project-card__links">
             <a href="https://github.com/Droxus16/PyMerchant" target="_blank" class="btn btn--sm btn--primary">
@@ -231,48 +242,125 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
               <span class="feature__icon">🔐</span>
               <span data-i18n="projects.pymerchant.f4">JWT auto-renovado + storage state</span>
             </div>
+            <div class="feature">
+              <span class="feature__icon">📄</span>
+              <span data-i18n="projects.pymerchant.f5">Reportes Allure con gráficas detalladas</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🏗️</span>
+              <span data-i18n="projects.pymerchant.f6">Page Object Model modular</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🔍</span>
+              <span data-i18n="projects.pymerchant.f7">Análisis HTTP + stack detection sin API</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🧙</span>
+              <span data-i18n="projects.pymerchant.f8">Onboarding wizard interactivo</span>
+            </div>
           </div>
         </article>
 
-        <!-- GastoSimple -->
+      </div>
+
+      <!-- ═══ Category: Full Stack Web Apps ═══ -->
+      <div class="project-category">
+        <div class="project-category__header">
+          <span class="project-category__icon">💻</span>
+          <h3 class="project-category__title" data-i18n="projects.cat.fullstack">Aplicaciones Web Full Stack</h3>
+        </div>
+
+        <!-- Gremionexo -->
         <article class="project-card">
-          <div class="project-card__image">
-            <img src="proyects/img/GASTOSIMPLE/GASTOSIMPLE.png" alt="Gasto Simple - Interfaz de la aplicación" loading="lazy" />
-            <div class="project-card__image-overlay"></div>
-          </div>
           <div class="project-card__header">
             <div>
-              <h3 class="project-card__name">Gasto Simple</h3>
-              <p class="project-card__subtitle" data-i18n="projects.gasto.sub">Herramienta de finanzas personales</p>
+              <h3 class="project-card__name">Gremionexo</h3>
+              <p class="project-card__subtitle" data-i18n="projects.gremionexo.sub">Directorio Nacional de Empresas en Colombia</p>
             </div>
+            <span class="project-card__version project-card__version--live">🟢 Live</span>
           </div>
-          <p class="project-card__desc" data-i18n="projects.gasto.desc">
-            Aplicación web para registrar ingresos, gastos y optimizar el ahorro.
-            Interfaz intuitiva con dashboard de visualización financiera y diseño responsive.
+          <p class="project-card__desc" data-i18n="projects.gremionexo.desc">
+            Directorio digital que conecta empresas, proveedores y emprendedores en toda Colombia.
+            Con más de 1.100 municipios y 12 categorías sectoriales, permite a los negocios
+            registrarse gratis, publicar catálogos y recibir contactos directos por WhatsApp.
           </p>
           <div class="project-card__tech">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span>
+            <span>Laravel</span><span>PHP</span><span>MySQL</span>
+            <span>Bootstrap</span><span>JavaScript</span>
+          </div>
+          <div class="project-card__links">
+            <a href="https://gremionexo.com" target="_blank" class="btn btn--sm btn--primary">
+              🌐 <span data-i18n="projects.gremionexo.live">Ver sitio</span>
+            </a>
+          </div>
+          <div class="project-card__features">
+            <div class="feature">
+              <span class="feature__icon">🏢</span>
+              <span data-i18n="projects.gremionexo.f1">33 departamentos, 1.122 municipios, 12 categorías</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🔍</span>
+              <span data-i18n="projects.gremionexo.f2">Búsqueda avanzada por categoría, departamento y ciudad</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">📋</span>
+              <span data-i18n="projects.gremionexo.f3">Perfiles con catálogo PDF, logo y documentos legales</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">💬</span>
+              <span data-i18n="projects.gremionexo.f4">Cotizaciones directas por WhatsApp integrado</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">📊</span>
+              <span data-i18n="projects.gremionexo.f5">Dashboard de estadísticas de visitas y contactos</span>
+            </div>
           </div>
         </article>
 
-        <!-- KERA -->
+        <!-- Namtrik -->
         <article class="project-card">
-          <div class="project-card__image">
-            <img src="proyects/img/KERA/KERA.png" alt="KERA - Directorio Nacional Digital" loading="lazy" />
-            <div class="project-card__image-overlay"></div>
-          </div>
           <div class="project-card__header">
             <div>
-              <h3 class="project-card__name">KERA</h3>
-              <p class="project-card__subtitle" data-i18n="projects.kera.sub">Directorio Nacional Digital</p>
+              <h3 class="project-card__name">Namtrik</h3>
+              <p class="project-card__subtitle" data-i18n="projects.namtrik.sub">Plataforma de Aprendizaje de Idiomas con IA</p>
             </div>
+            <span class="project-card__version project-card__version--live">🟢 Live</span>
           </div>
-          <p class="project-card__desc" data-i18n="projects.kera.desc">
-            Plataforma que conecta talento con oportunidades en toda Colombia.
-            Sistema de directorio con búsqueda por categoría, departamento y ciudad.
+          <p class="project-card__desc" data-i18n="projects.namtrik.desc">
+            Plataforma de libre acceso para aprender idiomas paso a paso. Incluye 12 lecciones
+            estructuradas en 3 niveles, talleres generados con Inteligencia Artificial,
+            videos de creadores reales y práctica de conversación con IA.
           </p>
           <div class="project-card__tech">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span>
+            <span>PHP</span><span>Laravel</span><span>MySQL</span>
+            <span>JavaScript</span><span>AI Integration</span>
+          </div>
+          <div class="project-card__links">
+            <a href="https://namtrik.com" target="_blank" class="btn btn--sm btn--primary">
+              🌐 <span data-i18n="projects.namtrik.live">Ver sitio</span>
+            </a>
+          </div>
+          <div class="project-card__features">
+            <div class="feature">
+              <span class="feature__icon">📚</span>
+              <span data-i18n="projects.namtrik.f1">12 lecciones en 3 niveles con progreso desbloqueable</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🤖</span>
+              <span data-i18n="projects.namtrik.f2">Talleres generados con IA + fallback sin conexión</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🎤</span>
+              <span data-i18n="projects.namtrik.f3">4 pilares: escucha, habla, lectura y escritura</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">💬</span>
+              <span data-i18n="projects.namtrik.f4">Práctica de conversación con IA en tiempo real</span>
+            </div>
+            <div class="feature">
+              <span class="feature__icon">🆓</span>
+              <span data-i18n="projects.namtrik.f5">100% gratuito con recursos de libre acceso</span>
+            </div>
           </div>
         </article>
 
@@ -290,6 +378,11 @@ me.build(<span class="str">"mi portafolio"</span>) <span class="cm"># ✅ Done</
           ¡Conectemos!
         </p>
         <div class="contact__links">
+          <a href="https://www.tiktok.com/@nodex.dev" target="_blank" class="contact__card">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.57 6.33 6.33 0 0 0 9.37 22a6.33 6.33 0 0 0 6.38-6.22V9.12a8.16 8.16 0 0 0 4.84 1.56V7.23a4.85 4.85 0 0 1-1-.54z"/></svg>
+            <span>TikTok</span>
+            <span class="contact__card__handle">@nodex.dev</span>
+          </a>
           <a href="https://github.com/Droxus16" target="_blank" class="contact__card">
             <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.6.1-.6 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
             <span>GitHub</span>
