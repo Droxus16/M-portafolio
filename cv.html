@@ -329,15 +329,6 @@
       box-shadow: 0 4px 16px rgba(10, 37, 64, 0.3);
     }
 
-    .btn-pdf {
-      background: linear-gradient(135deg, #00d2ff, #7b5cff);
-      color: #fff;
-    }
-
-    .btn-pdf:hover {
-      box-shadow: 0 4px 16px rgba(0, 210, 255, 0.3);
-    }
-
     /* ═══ PRINT STYLES ═══ */
     @media print {
       body { background: #fff; }
@@ -374,7 +365,7 @@
     <!-- HEADER -->
     <header class="cv__header">
       <h1 class="cv__name">Daniel Felipe Ramos Salazar</h1>
-      <p class="cv__title">Tecnólogo en Análisis y Desarrollo de Software — Full Stack Developer & QA Engineer</p>
+      <p class="cv__title">Tecnólogo en Análisis y Desarrollo de Software — QA Engineer & Full Stack Developer</p>
       <div class="cv__contact">
         <span>CC 1000324580</span>
         <span>Bogotá D.C., Colombia</span>
@@ -388,11 +379,7 @@
     <section class="cv__section">
       <h2 class="cv__section-title">Perfil Profesional</h2>
       <p class="cv__profile">
-        Tecnólogo en Análisis y Desarrollo de Software formado por el SENA, con enfoque en
-        desarrollo full stack, control de bases de datos y aseguramiento de calidad (QA).
-        Experiencia en automatización de pruebas, desarrollo de APIs REST, manejo de
-        bases de datos SQL y NoSQL, y creación de frameworks de testing. Apasionado por
-        construir software confiable, escalable y bien testeado.
+        Tecnólogo en Análisis y Desarrollo de Software formado por el SENA, con sólida experiencia en el ciclo de vida de pruebas (STLC), ejecución de pruebas funcionales, gestión de defectos y automatización con Python y JavaScript. Competente en consultas SQL y bases de datos relacionales, con manejo de entornos de desarrollo (IDE) y capacidad para asegurar la calidad y confiabilidad del software corporativo.
       </p>
     </section>
 
@@ -422,11 +409,11 @@
         </div>
         <p class="cv__exp-location">Bogotá, Colombia</p>
         <ul class="cv__exp-list">
-          <li>Automatización de pruebas funcionales por API utilizando Postman y scripts personalizados</li>
-          <li>Validación de flujos funcionales end-to-end en aplicaciones web</li>
-          <li>Diseño y ejecución de casos de prueba para asegurar la calidad del software</li>
-          <li>Documentación de defectos y seguimiento en herramientas de gestión de calidad</li>
-          <li>Colaboración con equipos de desarrollo para identificar y resolver bugs críticos</li>
+          <li>Ejecución de pruebas funcionales manuales y diseño de casos de prueba estructurados.</li>
+          <li>Automatización de pruebas de API y flujos end-to-end usando Postman, Playwright y Python (scripting básico).</li>
+          <li>Gestión, seguimiento y documentación detallada de defectos e incidencias en herramientas de control de calidad.</li>
+          <li>Validación de información y consultas en bases de datos SQL para asegurar la integridad de los datos.</li>
+          <li>Colaboración activa en el ciclo de desarrollo aplicando metodologías ágiles y control de versiones con Git/GitHub.</li>
         </ul>
       </div>
     </section>
@@ -436,28 +423,28 @@
       <h2 class="cv__section-title">Habilidades Técnicas</h2>
       <div class="cv__skills-grid">
         <div class="cv__skill-group">
-          <h4>Lenguajes de Programación</h4>
-          <p>Python, PHP, JavaScript, HTML5, CSS3</p>
+          <h4>QA & Testing (STLC)</h4>
+          <p>Pruebas funcionales, casos de prueba, gestión y seguimiento de defectos, Postman, Playwright, Pytest, Allure Reports, APIs REST</p>
         </div>
         <div class="cv__skill-group">
-          <h4>Bases de Datos</h4>
-          <p>SQL (MySQL, PostgreSQL), NoSQL (MongoDB)</p>
+          <h4>Bases de Datos & SQL</h4>
+          <p>SQL (MySQL, PostgreSQL), nociones de Oracle y DB2, validación de datos</p>
         </div>
         <div class="cv__skill-group">
-          <h4>QA & Testing</h4>
-          <p>Postman, Playwright, Pytest, Allure Reports, Pruebas API REST</p>
+          <h4>Lenguajes & Scripting</h4>
+          <p>Python (principal para QA), JavaScript, PHP, HTML5, CSS3</p>
         </div>
         <div class="cv__skill-group">
-          <h4>Frameworks & Herramientas</h4>
-          <p>Streamlit, Flask, Git, GitHub, APIs REST</p>
+          <h4>Herramientas & Entornos</h4>
+          <p>VS Code (IDE), Git, GitHub, Streamlit, Flask</p>
         </div>
         <div class="cv__skill-group">
-          <h4>Metodologías</h4>
-          <p>Scrum, Pruebas Automatizadas, QA Manual, Control de Calidad</p>
+          <h4>Metodologías & Procesos</h4>
+          <p>Scrum, Ciclo de vida del software y pruebas, Documentación técnica, Servicio al cliente</p>
         </div>
         <div class="cv__skill-group">
           <h4>Otros</h4>
-          <p>Análisis de datos, Documentación técnica, Resolución de problemas</p>
+          <p>Análisis de datos, resolución de problemas y adaptabilidad técnica</p>
         </div>
       </div>
     </section>
@@ -472,9 +459,7 @@
           <a href="https://github.com/Droxus16/PyMerchant" class="cv__project-link" target="_blank">github.com/Droxus16/PyMerchant</a>
         </div>
         <p class="cv__project-desc">
-          Framework de testing automatizado que valida tiendas e-commerce con Playwright + Pytest.
-          Incluye dashboard Streamlit en vivo, reportes Allure, ejecución paralela y soporte
-          multi-plataforma (Shopify, WooCommerce, MercadoLibre). Más de 70 tests unitarios.
+          Framework de testing automatizado desarrollado con Python, Playwright y Pytest. Incluye reporte de incidencias, dashboard interactivo en Streamlit y validación de flujos transaccionales completos.
         </p>
         <div class="cv__project-tech">
           <span>Python</span>
@@ -482,7 +467,6 @@
           <span>Pytest</span>
           <span>Streamlit</span>
           <span>Allure</span>
-          <span>Altair</span>
         </div>
       </div>
 
@@ -491,14 +475,14 @@
           <h3>KERA — Directorio Nacional Digital</h3>
         </div>
         <p class="cv__project-desc">
-          Plataforma que conecta talento con oportunidades en toda Colombia.
-          Sistema de directorio con búsqueda por categoría, departamento y ciudad.
+          Plataforma web con motor de búsqueda y gestión de información estructurada en bases de datos.
         </p>
         <div class="cv__project-tech">
-          <span>HTML5</span>
-          <span>CSS3</span>
           <span>JavaScript</span>
           <span>PHP</span>
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>SQL</span>
         </div>
       </div>
     </section>
